@@ -1,10 +1,10 @@
 {
-    description = "Doniyor's Home Manager Config"
+    description = "Doniyor's Home Manager Config";
 
     inputs = {
         nixpkgs.url = "nixpkgs/24.05";
         home-manager = {
-            url = "github:nix-community/home-manager/release/24.05";
+            url = "github:nix-community/home-manager/release-24.05";
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
