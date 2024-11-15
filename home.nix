@@ -9,5 +9,9 @@
         homeDirectory = "/home/doniyor";
 
         stateVersion = "24.05";
+            
+        file = {
+            "hello.txt".text = "hello, world";
+        };
     };
 }
