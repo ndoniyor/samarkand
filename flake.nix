@@ -9,16 +9,28 @@
         };
     };
 
-    outputs = { nixpkgs, home-manager, ...}:
-        let
+    outputs = { 
+        self,
+        nixpkgs,
+        home-manager,
+        ...
+    } @ inputs: let
             lib = nixpkgs.lib;
             system = "x86_64-linux";
             pkgs = import nixpkgs { inherit system; };
         in {
+            nixosConfigurations = {
+                nixos = lib.nixosSystem {
+                    specialArgs = { inherit inputs outputs; };
+                    modules = [ ./nixos/configuration.nix ];
+                };
+            };
+
             homeConfigurations = {
-                doniyor = home-manager.lib.homeManagerConfiguration {
+                "doniyor@nixos" = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
-                    modules = [ ./home.nix ];
+                    extraSpecialArgs = { inherit inputs outputs; };
+                    modules = [ ./home-manager/home.nix ];
                 };
             };
         };

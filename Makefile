@@ -1,6 +1,11 @@
 .PHONY: update
 update:
-	home-manager switch --flake .#doniyor
+	sudo nixos-rebuild switch --flake .#nixos
+	
+
+.PHONY: home
+home:
+	home-manager switch --flake .#doniyor@nixos
 
 .PHONY: clean
 clean:
