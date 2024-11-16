@@ -14,13 +14,11 @@
         nixpkgs,
         home-manager,
         ...
-    } @ inputs: let
-            lib = nixpkgs.lib;
-            system = "x86_64-linux";
-            pkgs = import nixpkgs { inherit system; };
-        in {
+    }   @ inputs: let
+        inherit (self) outputs;
+    in {
             nixosConfigurations = {
-                nixos = lib.nixosSystem {
+                nixos = nixpkgs.lib.nixosSystem {
                     specialArgs = { inherit inputs outputs; };
                     modules = [ ./nixos/configuration.nix ];
                 };
@@ -28,7 +26,7 @@
 
             homeConfigurations = {
                 "doniyor@nixos" = home-manager.lib.homeManagerConfiguration {
-                    inherit pkgs;
+                    pkgs = nixpkgs.legacyPackages.x86_64-linux;
                     extraSpecialArgs = { inherit inputs outputs; };
                     modules = [ ./home-manager/home.nix ];
                 };
