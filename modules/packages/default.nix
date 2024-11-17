@@ -3,6 +3,7 @@
     ./dev.nix
     ./utilities.nix
     ./media.nix
-    ./linuxDesktop.nix
+    ./linux.nix
+    ./hyprland.nix
   ];
 }
