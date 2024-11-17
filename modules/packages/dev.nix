@@ -1,4 +1,4 @@
-{ pkgs, ...}: {
+{ pkgs, unstable, ...}: {
     home.packages = with pkgs; [
         git
         nodejs
@@ -8,5 +8,8 @@
         docker-compose
         postman
         nil # Nix language server
-    ];
+        gnumake
+    ] ++ (with unstable; [
+        vscode
+    ]);
 }
