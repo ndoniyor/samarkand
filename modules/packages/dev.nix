@@ -3,7 +3,6 @@
         git
         nodejs
         python3
-        vscode
         docker
         docker-compose
         postman

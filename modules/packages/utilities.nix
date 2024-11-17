@@ -1,9 +1,24 @@
 { pkgs, unstable, ... }: {
     home.packages = with pkgs; [
-        htop
-        ripgrep
-        zoxide
-        unzip
-        curl
+    zsh
+    zsh-autosuggestions
+    thefuck
+
+    htop
+    ripgrep
+    zoxide
+    unzip
+    curl
+	glxinfo
+    brightnessctl
+    pamixer
+    playerctl
+    tree
+
+    tlp
+    throttled
+
+    dolphin
+    kitty
     ];
 }
