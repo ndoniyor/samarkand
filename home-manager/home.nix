@@ -7,6 +7,7 @@ in
         ../modules/fonts.nix
         ../modules/kitty.nix
         ../modules/hyprland.nix
+        ../modules/zsh.nix
         ../modules/packages
     ];
     nixpkgs = {
