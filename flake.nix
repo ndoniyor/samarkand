@@ -5,7 +5,7 @@
         nixpkgs.url = "github:nixos/nixpkgs/24.05";
         # Add unstable as separate input
         nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-        
+	
         home-manager = {
             url = "github:nix-community/home-manager/release-24.05";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -30,7 +30,7 @@
     in {
         nixosConfigurations = {
             nixos = nixpkgs.lib.nixosSystem {
-                specialArgs = { inherit inputs outputs; };
+                specialArgs = { inherit pkgs unstable; };
                 modules = [ ./nixos/configuration.nix ];
             };
         };

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, unstable, ... }:
 
 {
   imports =
@@ -73,6 +73,7 @@
     description = "doniyor";
     extraGroups = [ "networkmanager" "wheel" ];
   };
+
 
   services.openssh.enable = true;
   services.xserver.enable = true;

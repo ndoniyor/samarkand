@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, unstable, ...}:
+{ lib, config, pkgs, unstable, ...}:
 let
     username = "doniyor";
 in
@@ -8,7 +8,7 @@ in
         ../modules/kitty.nix
         ../modules/hyprland.nix
         ../modules/zsh.nix
-        ../modules/packages
+         (import ../modules/packages { inherit pkgs unstable; })
     ];
     nixpkgs = {
         overlays = [];
@@ -30,4 +30,5 @@ in
         firefox.enable = true;
         vim.defaultEditor = true;
     };
+    
 }

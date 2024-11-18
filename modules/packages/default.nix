@@ -1,9 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, unstable, ... }: {
   imports = [
-    ./dev.nix
-    ./utilities.nix
-    ./media.nix
-    ./linux.nix
-    ./hyprland.nix
+    (import ./dev.nix {inherit pkgs unstable; })
+    (import ./utilities.nix {inherit pkgs unstable; }) 
+    (import ./media.nix {inherit pkgs unstable; })
+    (import ./linux.nix  {inherit pkgs unstable; })
   ];
 }
