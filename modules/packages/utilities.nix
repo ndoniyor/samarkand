@@ -1,5 +1,5 @@
 { pkgs, unstable, ... }: {
-    home.packages = with pkgs; [
+  home.packages = with pkgs; [
     zsh
     zsh-autosuggestions
     thefuck
@@ -21,5 +21,5 @@
 
     dolphin
     kitty
-    ];
+  ];
 }

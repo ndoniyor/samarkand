@@ -23,9 +23,7 @@
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
 
-    shellAliases = {
-
-    };
+    shellAliases = { };
 
     oh-my-zsh = {
       enable = true;

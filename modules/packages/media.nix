@@ -1,6 +1,6 @@
 { pkgs, ... }: {
-    home.packages = with pkgs; [
-      vlc
-      spotify
-    ];
+  home.packages = with pkgs; [
+    vlc
+    spotify
+  ];
 }
