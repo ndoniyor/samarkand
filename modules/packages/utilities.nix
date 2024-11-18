@@ -9,11 +9,12 @@
     zoxide
     unzip
     curl
-	glxinfo
+    glxinfo
     brightnessctl
     pamixer
     playerctl
     tree
+    vim
 
     tlp
     throttled

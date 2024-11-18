@@ -1,10 +1,14 @@
 { pkgs, unstable, ... }:
-{
-    home.packages = with pkgs; [
-        wayland
-        
-        font-awesome
+{ home.packages = with pkgs; [
+    wayland
+    
+    font-awesome
 
-        fprintd
-    ];
+    fprintd
+
+    # Hyprland
+    wofi
+    waybar
+    ] ++ (with unstable; [
+    ]);
 }
