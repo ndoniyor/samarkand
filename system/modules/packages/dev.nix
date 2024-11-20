@@ -1,5 +1,6 @@
-{ pkgs, unstable, ... }: {
-  home.packages = with pkgs; [
+{ pkgs, ... }: 
+{
+  environment.systemPackages = with pkgs; [
     git
     nodejs
     python3
@@ -9,7 +10,6 @@
     nil # Nix language server
     nixpkgs-fmt
     gnumake
-  ] ++ (with unstable; [
     vscode
-  ]);
+  ]; 
 }
