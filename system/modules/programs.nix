@@ -10,9 +10,11 @@
   };
 
   programs = {
-    hyprland.enable = true;
-    xwayland.enable = true;
-    portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+      portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    };
+    zsh.enable = true;
   };
-  zsh.enable = true;
 }
