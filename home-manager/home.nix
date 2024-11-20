@@ -30,5 +30,4 @@ in
     firefox.enable = true;
     vim.defaultEditor = true;
   };
-
 }

@@ -6,6 +6,7 @@
     font-awesome
 
     fprintd
+    dconf
 
     # Hyprland
     wofi

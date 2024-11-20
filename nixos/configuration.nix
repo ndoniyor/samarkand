@@ -1,4 +1,4 @@
-{ config, pkgs, unstable, ... }:
+{ config, pkgs, unstable, fpSensorModule, hyprland, ... }:
 
 {
   imports =
@@ -18,11 +18,6 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    font-awesome
-  ];
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -57,6 +52,17 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Fingerprint settings
+  services.fprintd = {
+    enable = true;
+    tod = {
+      enable = true;
+      driver = fpSensorModule.lib.libfprint-2-tod1-vfs0090-bingch {
+        calib-data-file = ./calib-data.bin;
+      };
+    };
+  };
+
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -66,7 +72,13 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
   programs.zsh.enable = true;
+  programs.dconf.enable = true;
+  services.dbus.enable = true;
 
   users.users.doniyor = {
     isNormalUser = true;
@@ -75,7 +87,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-
   services.openssh.enable = true;
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
@@ -83,7 +94,6 @@
 
   powerManagement.enable = true;
   services.throttled.enable = true;
-  services.tlp.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

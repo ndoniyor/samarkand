@@ -17,6 +17,7 @@
     vim
 
     tlp
+    acpi
     throttled
 
     dolphin

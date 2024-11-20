@@ -4,8 +4,8 @@
     enable = true;
     theme = "Gruvbox Dark";
     font = {
-      name = "JetBrainsMono Nerd Font";
-      size = 11;
+      name = lib.mkForce "JetBrainsMono Nerd Font";
+      size = lib.mkForce 11;
     };
     settings = {
       confirm_os_window_close = 0;
