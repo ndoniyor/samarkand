@@ -1,5 +1,5 @@
-{ pkgs, unstable, ... }: {
-  home.packages = with pkgs; [
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
     zsh
     zsh-autosuggestions
     thefuck
@@ -19,8 +19,8 @@
     tlp
     acpi
     throttled
+    home-manager
 
     dolphin
-    kitty
   ];
 }

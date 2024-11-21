@@ -1,57 +1,50 @@
 {
-  description = "Doniyor's Home Manager Config";
+  description = "Doniyor's Parcha";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/24.05";
-    # Add unstable as separate input
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    #nixpkgs.url = "github:nixos/nixpkgs/24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-06cb-009a-fingerprint-sensor = {
-      url = "github:ahbnr/nixos-06cb-009a-fingerprint-sensor";
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixos-06cb-009a-fingerprint-sensor, hyprland, ... }:
+  outputs = { 
+      self, 
+      nixpkgs, 
+      home-manager, 
+      plasma-manager,
+      ... 
+    }@inputs:
     let
-      inherit (self) outputs;
+      lib = nixpkgs.lib;
       system = "x86_64-linux";
-
-      overlays = [ ];
-      config = {
-        allowUnfree = true;
-      };
-
-      pkgs = import nixpkgs {
-        inherit system overlays config;
-      };
-
-      unstable = import nixpkgs-unstable {
-        inherit system overlays config;
-      };
-
-      fpSensorModule = nixos-06cb-009a-fingerprint-sensor;
+      pkgs = nixpkgs.legacyPackages.${system};
+      plasma-manager-module = plasma-manager.homeManagerModules.plasma-manager;
     in
     {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit pkgs unstable hyprland fpSensorModule; };
-          modules = [ ./nixos/configuration.nix ];
+        nixos = lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [ ./system/configuration.nix ];
         };
       };
       homeConfigurations = {
         "doniyor@nixos" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit pkgs unstable; };
+          inherit pkgs;
+          extraSpecialArgs = { inherit inputs; };
           modules = [ 
-            ./home-manager/home.nix
-#	    (import ./modules/hyprland.nix { inherit pkgs hyprland;})
+            ./home
+            plasma-manager-module
           ];
         };
       };
