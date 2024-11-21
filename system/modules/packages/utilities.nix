@@ -19,6 +19,7 @@
     tlp
     acpi
     throttled
+    home-manager
 
     dolphin
   ];
