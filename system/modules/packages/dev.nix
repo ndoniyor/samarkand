@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, pkgs-unstable, ... }: 
 {
   environment.systemPackages = with pkgs; [
     git
@@ -10,6 +10,7 @@
     nil # Nix language server
     nixpkgs-fmt
     gnumake
+  ] ++ (with pkgs-unstable; [
     vscode
-  ]; 
+  ]); 
 }

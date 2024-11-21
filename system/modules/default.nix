@@ -10,6 +10,8 @@
     ./nixsettings.nix
     ./programs.nix
     ./sound.nix
+    ./boot.nix
+    ./power.nix
     ./users.nix
   ];
 }
