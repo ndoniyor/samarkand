@@ -2,11 +2,11 @@
 {
   services= {
     libinput.enable = true;
-    displayManager.sddm = {
+    xserver = {
       enable = true;
-      wayland.enable = true;
+      displayManager.sddm.enable = true;
+#      displayManager.lightdm.wayland = true;
     };
-    xserver.enable = true;
     desktopManager.plasma6.enable = true;
   };
 }
