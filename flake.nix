@@ -12,19 +12,12 @@
     hyprland = {
       url = "github:hyprwm/Hyprland?submodules=1";
     };
-
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
   };
 
   outputs = { 
       self, 
       nixpkgs, 
       home-manager, 
-      plasma-manager,
       hyprland,
       ... 
     }@inputs:
@@ -32,7 +25,6 @@
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      plasma-manager-module = plasma-manager.homeManagerModules.plasma-manager;
     in
     {
       nixosConfigurations = {
@@ -48,7 +40,6 @@
           extraSpecialArgs = { inherit inputs; };
           modules = [ 
             ./home
-            plasma-manager-module
           ];
         };
       };
