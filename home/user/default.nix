@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./plasma.nix
+    ./hyprland.nix
     ./config.nix
     ./environment.nix
     ./git.nix
