@@ -3,7 +3,8 @@
   imports = [
     ./packages
     ./hardware.nix
-    ./plasma.nix
+    #./plasma.nix
+    ./hyprland.nix
     ./fonts.nix
     ./i18n.nix
     ./networking.nix

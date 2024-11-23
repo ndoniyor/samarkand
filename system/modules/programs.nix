@@ -14,5 +14,9 @@
   programs = {
     zsh.enable = true;
     firefox.enable = true;
+    vim = {
+      enable = true;
+      package = pkgs.vim-full;
+    };
   };
 }
