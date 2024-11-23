@@ -1,8 +1,8 @@
 { config, lib, pkgs, ... }:
-let
-  assetsDir = ../../assets;
-in
 {
-  stylix.enable = true;
-  stylix.image = toString assetsDir + "/gruvbox-dark-rainbow.png";
+  stylix = {
+    enable = true;
+    image = ../../assets/gruvbox-dark-rainbow.png;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+  };
 }

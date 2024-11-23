@@ -6,5 +6,6 @@
     ./environment.nix
     ./git.nix
     ./zsh.nix
+    ./stylix.nix
   ];
 }
