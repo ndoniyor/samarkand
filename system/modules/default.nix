@@ -13,5 +13,6 @@
     ./boot.nix
     ./power.nix
     ./users.nix
+    ./stylix.nix
   ];
 }
