@@ -16,9 +16,8 @@
         devices = [ "nodev" ];
         efiSupport = true;
         useOSProber = true;
-        theme = .././assets/nix-grub;
+        theme = ../../assets/nix-grub;
       };
-      timeout = 0;
     };
 
     consoleLogLevel = 0;
