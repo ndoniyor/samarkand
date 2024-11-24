@@ -8,4 +8,6 @@
     ./zsh.nix
     ./stylix.nix
   ];
+  programs.kitty.enable = true;
+  programs.firefox.enable = true;
 }
