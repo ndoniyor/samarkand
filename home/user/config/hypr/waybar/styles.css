@@ -1,0 +1,11 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 10px;
+}
+
+#cpu span {
+    margin-right: 0px;
+    padding-right: 2px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
