@@ -1,9 +1,10 @@
 * {
-    font-family: "JetBrainsMono Nerd Font";
+    font-family: 'Times New Roman', Times, serif; 
     font-size: 10px;
 }
 
-#cpu span {
+#cpu {
+    background-color: white;
     margin-right: 0px;
     padding-right: 2px;
     border-top-right-radius: 0px;
