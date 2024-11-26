@@ -9,6 +9,7 @@
     ./stylix.nix
     ./fonts.nix
     ./waybar.nix
+    ./wofi.nix
   ];
   programs.kitty.enable = true;
   programs.firefox.enable = true;
