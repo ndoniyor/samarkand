@@ -15,12 +15,13 @@
     playerctl
     tree
     vim
+    xclip
 
     tlp
     acpi
     throttled
     home-manager
-
+    
     dolphin
   ];
 }
