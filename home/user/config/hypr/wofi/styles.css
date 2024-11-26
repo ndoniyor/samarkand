@@ -1,0 +1,93 @@
+/* Gruvbox Hard colors
+bg0_h: #1d2021 (dark bg)
+bg0: #282828 (main bg)
+fg0: #fbf1c7 (main fg)
+fg1: #ebdbb2
+gray: #928374
+orange: #fe8019
+red: #fb4934
+blue: #83a598
+*/
+
+window {
+    margin: 0px;
+    border: 2px solid #fe8019;
+    border-radius: 12px;
+    background-color: rgba(29, 32, 33, 0.95); /* bg0_h with slight transparency */
+    font-family: "DejaVu";
+    font-size: 16px;
+}
+
+#input {
+    margin: 8px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    color: #fbf1c7;     /* fg0 */
+    font-size: 14px;
+    background-color: rgba(40, 40, 40, 0.95); /* bg0 */
+}
+
+#inner-box {
+    margin: 0px;
+    padding: 0px 8px 8px 8px;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 5px;
+    padding: 0px;
+    background-color: transparent;
+}
+
+#text {
+    margin: 0px;
+    padding: 0px 8px;
+    color: #ebdbb2;    /* fg1 */
+    font-size: 14px;
+}
+
+#entry {
+    margin: 0px 0px;
+    padding: 6px;
+    border-radius: 8px;
+    background: transparent;
+}
+
+#entry:selected {
+    background: rgba(254, 128, 25, 0.4); /* orange with transparency */
+}
+
+#entry:hover {
+    background: rgba(146, 131, 116, 0.2); /* gray with transparency */
+}
+
+/* For the app icons */
+#img {
+    margin: 4px;
+    padding: 0px;
+    background: none;
+}
+
+/* Gruvbox-style scrollbar */
+scrollbar {
+    background-color: #1d2021;  /* bg0_h */
+    color: #928374;             /* gray */
+}
+
+scrollbar slider {
+    background-color: #928374;  /* gray */
+    border-radius: 10px;
+    margin: 3px;
+}
+
+/* Input cursor color */
+#input * {
+    color: #fe8019;  /* orange */
+}
