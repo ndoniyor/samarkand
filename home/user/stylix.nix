@@ -9,6 +9,7 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     targets.kitty.enable = true;
     targets.waybar.enable = false;
+    targets.wofi.enable = false;
 
     fonts = {
       monospace = {
