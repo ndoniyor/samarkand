@@ -8,5 +8,21 @@
     };
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     targets.kitty.enable = true;
+    targets.waybar.enable = false;
+
+    fonts = {
+      monospace = {
+        name = "JetBrainsMono Nerd Font";
+        package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+      };
+      sansSerif = {
+        name = "DejaVu Sans";
+        package = pkgs.dejavu_fonts;
+      };
+      serif = {
+        name = "DejaVu Sans";
+        package = pkgs.dejavu_fonts;
+      };
+    };
   };
 }

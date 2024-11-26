@@ -7,6 +7,7 @@
     ./git.nix
     ./zsh.nix
     ./stylix.nix
+    ./fonts.nix
     ./waybar.nix
   ];
   programs.kitty.enable = true;
