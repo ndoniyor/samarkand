@@ -10,6 +10,7 @@
     targets.kitty.enable = true;
     targets.waybar.enable = false;
     targets.wofi.enable = false;
+    targets.console.enable = false;
 
     fonts = {
       monospace = {
