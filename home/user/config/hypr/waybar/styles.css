@@ -1,12 +1,136 @@
+@define-color gruvbox-bg-darkest #1d2021;  /* ---- */
+@define-color gruvbox-bg-darker #3c3836;   /* --- */
+@define-color gruvbox-bg-dark #504945;     /* -- */
+@define-color gruvbox-bg-light #665c54;    /* - */
+@define-color gruvbox-fg-dark #bdae93;     /* + */
+@define-color gruvbox-fg #d5c4a1;          /* ++ */
+@define-color gruvbox-fg-light #ebdbb2;    /* +++ */
+@define-color gruvbox-fg-lightest #fbf1c7; /* ++++ */
+
+@define-color gruvbox-red #fb4934;
+@define-color gruvbox-orange #fe8019;
+@define-color gruvbox-yellow #fabd2f;
+@define-color gruvbox-green #b8bb26;
+@define-color gruvbox-cyan #8ec07c;
+@define-color gruvbox-blue #83a598;
+@define-color gruvbox-purple #d3869b;
+@define-color gruvbox-brown #d65d0e;
+
 * {
-    font-family: 'Times New Roman', Times, serif; 
-    font-size: 10px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#cpu,
+#memory,
+#pulseaudio,
+#backlight,
+#network,
+#battery,
+#clock,
+#hyprland
+{
+    padding: 0 10px;
+    margin: 5px 5px 0px 5px;
+    border-radius: 10px;
+    color: @gruvbox-bg-darkest;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+}
+
+/*-------RIGHT WIDGET STYLES-------*/
+#pulseaudio {
+    background: @gruvbox-red;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    margin-right: 0;
+}
+
+#backlight, #cpu, #memory, #network, #battery {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+#clock {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    margin-left: 0;
+}
+
+#backlight {
+    background: @gruvbox-orange;
 }
 
 #cpu {
-    background-color: white;
-    margin-right: 0px;
-    padding-right: 2px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
+    background: @gruvbox-yellow;
 }
+
+#memory {
+    background: @gruvbox-green;
+}
+
+#network {
+    background: @gruvbox-blue
+}
+
+#battery {
+    background: @gruvbox-purple
+}
+
+#clock {
+    background: @gruvbox-fg-dark
+}
+
+/*-------CENTER WIDGET STYLES-------*/
+
+/*-------LEFT WIDGET STYLES-------*/
+
+#window {
+    padding: 0 10px 0px 10px;  /* Add padding on sides */
+    margin: 5px 0 0px 5px;  /* Changed margins for left position */
+    border-top-left-radius: 10px;    /* Switched radius to left side */
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background: @gruvbox-brown;
+    color: @gruvbox-bg-darkest;
+ }
+ 
+ #workspaces {
+    padding: 0;
+    margin: 5px 5px 0px 0;  /* Changed margins for right position */
+    border-top-right-radius: 10px;   /* Switched radius to right side */
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background: @gruvbox-bg-dark;
+ }
+ 
+ #workspaces button {
+    padding: 0;
+    border-radius: 0;
+    min-width: 30px;
+ }
+ 
+ #workspaces button:first-child,
+ #workspaces button.active:first-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+ }
+ 
+ #workspaces button:last-child,
+ #workspaces button.active:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+ }
+ 
+ #workspaces button.active {
+    background: @gruvbox-brown;
+    color: @gruvbox-bg-darkest;
+ }
