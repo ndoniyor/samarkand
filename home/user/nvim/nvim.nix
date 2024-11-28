@@ -11,6 +11,7 @@
       tabstop = 4; # Number of spaces a tab counts for
       ignorecase = true; # Case insensitive search
       smartcase = true; # Case sensitive when using uppercase
+      wrap = false;
     };
 
     keymaps = [
@@ -19,12 +20,6 @@
         key = "<leader>e";
         action = ":Neotree toggle<CR>";
         options.desc = "Toggle Explorer";
-      }
-      {
-        mode = "n";
-        key = "<leader>h";
-        action = ":Neotree focus<CR>";
-        options.desc = "Focus Explorer";
       }
     ];
 
