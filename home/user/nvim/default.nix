@@ -52,21 +52,6 @@
     globals.gruvbox_dark_mode = true;
     globals.mapleader = " ";
 
-    plugins.treesitter = {
-      enable = true;
-
-      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-        nix
-      ];
-      settings = {
-        indent.enable = true;
-        ensure_installed = [
-          "nix"
-        ];
-      };
-
-    };
-
     plugins.lsp = {
       enable = true;
       servers.nil_ls = {
@@ -85,10 +70,6 @@
         "<leader>fb" = "buffers";
         "<leader>fh" = "help_tags";
       };
-    };
-
-    plugins.neo-tree = {
-      enable = true;
     };
   };
 
