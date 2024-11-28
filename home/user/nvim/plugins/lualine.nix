@@ -4,19 +4,21 @@
         plugins = {
             bufferline = {
                 enable = true;
-                diagnostics = "nvim_lsp";
-                separatorStyle = "slant";
             };
             lualine = {
                 enable = true;
-                theme = "gruvbox";
-                componentSeparators = {
-                    left = "|";
-                    right = "|";
-                };
-                sectionSeparators = {
-                    left = "";
-                    right = "";
+                settings.options = {
+                    theme = "gruvbox";
+                    diagnostics = "nvim_lsp";
+                    separatorStyle = "slant";
+                    component_separators = {
+                        left = "|";
+                        right = "|";
+                    };
+                    section_separators = {
+                        left = "";
+                        right = "";
+                    };
                 };
             };
         };
