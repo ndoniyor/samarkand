@@ -1,27 +1,29 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.nixvim = {
     plugins = {
       cmp = {
         enable = true;
+        autoEnableSources = true;
         settings = {
-          mapping = {
-            "<C-p>" = "cmp.mapping.select_prev_item()";
-            "<C-n>" = "cmp.mapping.select_next_item()";
-            "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-            "<C-f>" = "cmp.mapping.scroll_docs(4)";
-            "<C-Space>" = "cmp.mapping.complete()";
-            "<C-e>" = "cmp.mapping.close()";
-            "<CR>" = "cmp.mapping.confirm({ select = true })";
-          };
           sources = [
-            { name = "path"; }                # file paths
-            { name = "nvim_lsp"; }           # from language server
-            { name = "buffer"; }             # text within current buffer
-            { name = "nvim_lsp_signature_help"; }  # display function signatures
+            { name = "nvim_lsp"; }
+            { name = "path"; }
+            { name = "buffer"; }
           ];
+          mapping = {
+            "<C-n>" = "cmp.mapping.select_next_item()";
+            "<C-p>" = "cmp.mapping.select_prev_item()";
+            "<C-y>" = "cmp.mapping.confirm({ select = true })";
+            "<C-Space>" = "cmp.mapping.complete()";
+          };
         };
       };
+      
+      # Source plugins
+      cmp-nvim-lsp.enable = true;
+      cmp-path.enable = true;
+      cmp-buffer.enable = true;
     };
   };
 }
