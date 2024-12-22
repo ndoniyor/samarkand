@@ -14,6 +14,6 @@
     ./power.nix
     ./users.nix
     ./greetd.nix
-    ./stylix.nix
+        #    ./stylix.nix
   ];
 }

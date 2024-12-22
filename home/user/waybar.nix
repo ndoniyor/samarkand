@@ -56,9 +56,10 @@
           rewrite = {
             "firefox" = "";
             "Code" = "󰨞";
-            "kitty" = "";
+            "kitty" = " ";
             "org.kde.dolphin" = "";
             "Spotify" = "";
+            "vesktop" = " ";
           };
         };
 

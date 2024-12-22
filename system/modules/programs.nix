@@ -17,4 +17,23 @@
       package = pkgs.vim-full;
     };
   };
+  programs.dconf.enable = true;
+
+  fonts = {
+    packages = with pkgs; [
+      corefonts
+      jetbrains-mono
+      noto-fonts
+      ubuntu_font_family
+    ];
+    fontDir.enable = true;
+    enableDefaultPackages = true;
+    fontconfig = {
+      defaultFonts = {
+        monospace = [ "JetBrainsMono" "FontAwesome" ];
+        sansSerif = [ "Ubuntu" "Noto Sans"];
+        serif = [ "Ubuntu" "Noto Sans"];
+      };
+    };
+  };
 }
