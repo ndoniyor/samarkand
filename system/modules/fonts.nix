@@ -2,21 +2,25 @@
 {
   fonts = {
     packages = with pkgs; [
+      corefonts
       font-awesome
       jetbrains-mono
-      (nerdfonts.override { fonts = ["JetBrainsMono"]; })
+      noto-fonts
+      noto-fonts-emoji
+      ubuntu_font_family
+      nerd-fonts.jetbrains-mono
     ];
     
     # Add these settings
-    enableDefaultFonts = true;  # or fontDir.enable = true; in newer versions
+    fontDir.enable = true;  # or fontDir.enable = true; in newer versions
     
     # Optional but recommended
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = [ "JetBrainsMono Nerd Font Mono" "FontAwesome" ];
-        sansSerif = [ "DejaVu Sans" ];
-        serif = [ "DejaVu Serif" ];
+        monospace = [ "JetBrainsMono" "FontAwesome" ];
+        sansSerif = [ "Ubuntu" "Noto Sans" ];
+        serif = [ "Ubuntu" "Noto Serif" ];
       };
     };
   };

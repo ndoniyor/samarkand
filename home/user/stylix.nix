@@ -10,11 +10,12 @@
     targets.kitty.enable = true;
     targets.waybar.enable = false;
     targets.wofi.enable = false;
+    targets.console.enable = false;
 
     fonts = {
       monospace = {
         name = "JetBrainsMono Nerd Font";
-        package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+        package = pkgs.nerd-fonts.jetbrains-mono;
       };
       sansSerif = {
         name = "DejaVu Sans";

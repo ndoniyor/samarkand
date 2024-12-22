@@ -7,6 +7,8 @@
     htop
     ripgrep
     zoxide
+    fd
+    eza
     unzip
     curl
     glxinfo

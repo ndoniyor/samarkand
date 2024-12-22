@@ -7,5 +7,8 @@ in
         enable = true;
         userName = userName;
         userEmail = email;
+    extraConfig = {
+        push = { autoSetupRemote = true; };
+      };
     };
 }

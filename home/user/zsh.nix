@@ -21,9 +21,15 @@
       fi
 
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+      eval "$(zoxide init zsh)"
     '';
 
-    shellAliases = { };
+    shellAliases = {
+      cd = "z";
+      find = "fd";
+      grep = "rg";
+      ls = "eza";
+    };
 
     oh-my-zsh = {
       enable = true;
